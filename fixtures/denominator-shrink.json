@@ -1,0 +1,14 @@
+{
+  "schema": "gooo/evaluator-lineage/input/v1",
+  "case_id": "denominator-shrink",
+  "parent": {"id": "gooo://evaluator/parent", "version": "v0.1.0", "release_tag": "v0.1.0", "release_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "observed_release_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "generation_depth": 2, "inherited_counterexample_count": 3, "decision": "CLOSED", "self_attestation": null},
+  "child": {"id": "gooo://evaluator/child-candidate", "version": "v0.2.0", "release_tag": "v0.2.0", "release_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "observed_release_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "generation_depth": 3, "inherited_counterexample_count": 3, "decision": "", "self_attestation": null},
+  "cells": [
+    {"id": "gooo.cell.evaluator-lineage.foundation-source-integrity", "decision": "ACCEPTED", "evidence_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111"},
+    {"id": "gooo.cell.evaluator-lineage.foundation-immutable-release", "decision": "ACCEPTED", "evidence_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222"},
+    {"id": "gooo.cell.evaluator-lineage.foundation-read-only-boundary", "decision": "ACCEPTED", "evidence_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333"}
+  ],
+  "upper_decision": "CLOSED",
+  "improvement": {"metric_id": "gooo.metric.evaluator-lineage.foundation-source-integrity.v1", "input_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "before": {"value": "before:source-release-a", "digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"}, "after": {"value": "after:source-release-b", "digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}},
+  "authority": {"repository_writes": 0, "local_test_executions": 0, "cross_project_required_gates": 0}
+}

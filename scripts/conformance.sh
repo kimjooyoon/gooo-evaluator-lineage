@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+go test ./...
+
+go_files=$(rg --files -g '*.go')
+gofmt_output=$(gofmt -d ${go_files})
+if [[ -n "${gofmt_output}" ]]; then
+  printf '%s\n' "${gofmt_output}"
+  exit 1
+fi
+
+go vet ./...
+go run ./cmd/gooo-lineage compile \
+  -source examples/evaluator-lineage/main.gooo \
+  -contract contracts/evaluator-lineage-denominator-v1.json \
+  -output-ir internal/generated/semantic-ir.json \
+  -output-go internal/generated/semantic.gooo.go
+git diff --exit-code -- internal/generated/semantic-ir.json internal/generated/semantic.gooo.go
+
+go run ./cmd/gooo-lineage conformance \
+  -fixtures fixtures \
+  -output-dir artifacts/conformance
+
+if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
+  cat artifacts/conformance/ci-summary.md >> "${GITHUB_STEP_SUMMARY}"
+fi

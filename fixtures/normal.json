@@ -1,0 +1,48 @@
+{
+  "schema": "gooo/evaluator-lineage/input/v1",
+  "case_id": "normal",
+  "parent": {
+    "id": "gooo://evaluator/parent",
+    "version": "v0.1.0",
+    "release_tag": "v0.1.0",
+    "release_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "observed_release_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "generation_depth": 2,
+    "inherited_counterexample_count": 3,
+    "decision": "CLOSED",
+    "self_attestation": null
+  },
+  "child": {
+    "id": "gooo://evaluator/child-candidate",
+    "version": "v0.2.0",
+    "release_tag": "v0.2.0",
+    "release_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "observed_release_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "generation_depth": 3,
+    "inherited_counterexample_count": 3,
+    "decision": "",
+    "self_attestation": null
+  },
+  "cells": [
+    {"id": "gooo.cell.evaluator-lineage.foundation-source-integrity", "decision": "ACCEPTED", "evidence_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111"},
+    {"id": "gooo.cell.evaluator-lineage.foundation-immutable-release", "decision": "ACCEPTED", "evidence_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222"},
+    {"id": "gooo.cell.evaluator-lineage.foundation-read-only-boundary", "decision": "ACCEPTED", "evidence_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333"},
+    {"id": "gooo.cell.evaluator-lineage.foundation-exact-counterexample", "decision": "ACCEPTED", "evidence_digest": "sha256:4444444444444444444444444444444444444444444444444444444444444444"},
+    {"id": "gooo.cell.evaluator-lineage.coherence-parent-child-binding", "decision": "ACCEPTED", "evidence_digest": "sha256:5555555555555555555555555555555555555555555555555555555555555555"},
+    {"id": "gooo.cell.evaluator-lineage.coherence-generation-depth", "decision": "ACCEPTED", "evidence_digest": "sha256:6666666666666666666666666666666666666666666666666666666666666666"},
+    {"id": "gooo.cell.evaluator-lineage.coherence-inherited-counterexample", "decision": "ACCEPTED", "evidence_digest": "sha256:7777777777777777777777777777777777777777777777777777777777777777"},
+    {"id": "gooo.cell.evaluator-lineage.coherence-parent-decision", "decision": "ACCEPTED", "evidence_digest": "sha256:8888888888888888888888888888888888888888888888888888888888888888"},
+    {"id": "gooo.cell.evaluator-lineage.regression-counterexample-replay", "decision": "ACCEPTED", "evidence_digest": "sha256:9999999999999999999999999999999999999999999999999999999999999999"},
+    {"id": "gooo.cell.evaluator-lineage.regression-child-candidate", "decision": "ACCEPTED", "evidence_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+    {"id": "gooo.cell.evaluator-lineage.regression-no-self-attestation", "decision": "ACCEPTED", "evidence_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"},
+    {"id": "gooo.cell.evaluator-lineage.regression-improvement-pair", "decision": "ACCEPTED", "evidence_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"}
+  ],
+  "upper_decision": "CLOSED",
+  "improvement": {
+    "metric_id": "gooo.metric.evaluator-lineage.foundation-source-integrity.v1",
+    "input_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "before": {"value": "before:source-release-a", "digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"},
+    "after": {"value": "after:source-release-b", "digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}
+  },
+  "authority": {"repository_writes": 0, "local_test_executions": 0, "cross_project_required_gates": 0}
+}

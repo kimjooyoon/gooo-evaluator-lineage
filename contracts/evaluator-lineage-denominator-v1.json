@@ -1,0 +1,30 @@
+{
+  "schema": "gooo/evaluator-lineage/denominator/v1",
+  "denominator_id": "gooo://denominator/evaluator-lineage/v1",
+  "candidate_id": "gooo.product.evaluator-lineage.v1",
+  "total": 12,
+  "proofs": [
+    {"choice": "FOUNDATION", "total": 4},
+    {"choice": "COHERENCE", "total": 4},
+    {"choice": "REGRESSION", "total": 4}
+  ],
+  "indicator_classes": [
+    {"class": "DRIVER", "total": 4},
+    {"class": "OUTCOME", "total": 4},
+    {"class": "GUARDRAIL", "total": 4}
+  ],
+  "cells": [
+    {"ordinal": 1, "id": "gooo.cell.evaluator-lineage.foundation-source-integrity", "activity": "FoundationSourceIntegrity", "proof_choice": "FOUNDATION", "indicator_class": "DRIVER", "metric_id": "gooo.metric.evaluator-lineage.foundation-source-integrity.v1", "metric_path": "cells.foundation-source-integrity", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 2, "id": "gooo.cell.evaluator-lineage.foundation-immutable-release", "activity": "FoundationImmutableRelease", "proof_choice": "FOUNDATION", "indicator_class": "OUTCOME", "metric_id": "gooo.metric.evaluator-lineage.foundation-immutable-release.v1", "metric_path": "cells.foundation-immutable-release", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 3, "id": "gooo.cell.evaluator-lineage.foundation-read-only-boundary", "activity": "FoundationReadOnlyBoundary", "proof_choice": "FOUNDATION", "indicator_class": "GUARDRAIL", "metric_id": "gooo.metric.evaluator-lineage.foundation-read-only-boundary.v1", "metric_path": "cells.foundation-read-only-boundary", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 4, "id": "gooo.cell.evaluator-lineage.foundation-exact-counterexample", "activity": "FoundationExactCounterexample", "proof_choice": "FOUNDATION", "indicator_class": "DRIVER", "metric_id": "gooo.metric.evaluator-lineage.foundation-exact-counterexample.v1", "metric_path": "cells.foundation-exact-counterexample", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 5, "id": "gooo.cell.evaluator-lineage.coherence-parent-child-binding", "activity": "CoherenceParentChildBinding", "proof_choice": "COHERENCE", "indicator_class": "DRIVER", "metric_id": "gooo.metric.evaluator-lineage.coherence-parent-child-binding.v1", "metric_path": "cells.coherence-parent-child-binding", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 6, "id": "gooo.cell.evaluator-lineage.coherence-generation-depth", "activity": "CoherenceGenerationDepth", "proof_choice": "COHERENCE", "indicator_class": "OUTCOME", "metric_id": "gooo.metric.evaluator-lineage.coherence-generation-depth.v1", "metric_path": "cells.coherence-generation-depth", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 7, "id": "gooo.cell.evaluator-lineage.coherence-inherited-counterexample", "activity": "CoherenceInheritedCounterexample", "proof_choice": "COHERENCE", "indicator_class": "GUARDRAIL", "metric_id": "gooo.metric.evaluator-lineage.coherence-inherited-counterexample.v1", "metric_path": "cells.coherence-inherited-counterexample", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 8, "id": "gooo.cell.evaluator-lineage.coherence-parent-decision", "activity": "CoherenceParentDecision", "proof_choice": "COHERENCE", "indicator_class": "OUTCOME", "metric_id": "gooo.metric.evaluator-lineage.coherence-parent-decision.v1", "metric_path": "cells.coherence-parent-decision", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 9, "id": "gooo.cell.evaluator-lineage.regression-counterexample-replay", "activity": "RegressionCounterexampleReplay", "proof_choice": "REGRESSION", "indicator_class": "DRIVER", "metric_id": "gooo.metric.evaluator-lineage.regression-counterexample-replay.v1", "metric_path": "cells.regression-counterexample-replay", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 10, "id": "gooo.cell.evaluator-lineage.regression-child-candidate", "activity": "RegressionChildCandidate", "proof_choice": "REGRESSION", "indicator_class": "OUTCOME", "metric_id": "gooo.metric.evaluator-lineage.regression-child-candidate.v1", "metric_path": "cells.regression-child-candidate", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 11, "id": "gooo.cell.evaluator-lineage.regression-no-self-attestation", "activity": "RegressionNoSelfAttestation", "proof_choice": "REGRESSION", "indicator_class": "GUARDRAIL", "metric_id": "gooo.metric.evaluator-lineage.regression-no-self-attestation.v1", "metric_path": "cells.regression-no-self-attestation", "artifact": "report.cells", "evaluator": "lineage.Evaluate"},
+    {"ordinal": 12, "id": "gooo.cell.evaluator-lineage.regression-improvement-pair", "activity": "RegressionImprovementPair", "proof_choice": "REGRESSION", "indicator_class": "GUARDRAIL", "metric_id": "gooo.metric.evaluator-lineage.regression-improvement-pair.v1", "metric_path": "cells.regression-improvement-pair", "artifact": "report.cells", "evaluator": "lineage.Evaluate"}
+  ]
+}

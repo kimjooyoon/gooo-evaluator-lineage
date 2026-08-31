@@ -1,0 +1,151 @@
+{
+  "schema": "gooo/evaluator-lineage/ir/v1",
+  "source_path": "examples/evaluator-lineage/main.gooo",
+  "source_digest": "sha256:e68b7e65038d5713150616e65baefe684c3a99c61783c897a29b403e20669f05",
+  "nodes": [
+    {
+      "id": "gooo://evaluator-lineage/activity/foundation-source-integrity",
+      "activity": "FoundationSourceIntegrity",
+      "name": "Foundation source integrity",
+      "proof_choice": "FOUNDATION",
+      "indicator_class": "DRIVER",
+      "metric_id": "gooo.metric.evaluator-lineage.foundation-source-integrity.v1",
+      "metric_path": "cells.foundation-source-integrity",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 4
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/foundation-immutable-release",
+      "activity": "FoundationImmutableRelease",
+      "name": "Foundation immutable release",
+      "proof_choice": "FOUNDATION",
+      "indicator_class": "OUTCOME",
+      "metric_id": "gooo.metric.evaluator-lineage.foundation-immutable-release.v1",
+      "metric_path": "cells.foundation-immutable-release",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 5
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/foundation-read-only-boundary",
+      "activity": "FoundationReadOnlyBoundary",
+      "name": "Foundation read-only boundary",
+      "proof_choice": "FOUNDATION",
+      "indicator_class": "GUARDRAIL",
+      "metric_id": "gooo.metric.evaluator-lineage.foundation-read-only-boundary.v1",
+      "metric_path": "cells.foundation-read-only-boundary",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 6
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/foundation-exact-counterexample",
+      "activity": "FoundationExactCounterexample",
+      "name": "Foundation exact counterexample",
+      "proof_choice": "FOUNDATION",
+      "indicator_class": "DRIVER",
+      "metric_id": "gooo.metric.evaluator-lineage.foundation-exact-counterexample.v1",
+      "metric_path": "cells.foundation-exact-counterexample",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 7
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/coherence-parent-child-binding",
+      "activity": "CoherenceParentChildBinding",
+      "name": "Coherence parent child binding",
+      "proof_choice": "COHERENCE",
+      "indicator_class": "DRIVER",
+      "metric_id": "gooo.metric.evaluator-lineage.coherence-parent-child-binding.v1",
+      "metric_path": "cells.coherence-parent-child-binding",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 9
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/coherence-generation-depth",
+      "activity": "CoherenceGenerationDepth",
+      "name": "Coherence generation depth",
+      "proof_choice": "COHERENCE",
+      "indicator_class": "OUTCOME",
+      "metric_id": "gooo.metric.evaluator-lineage.coherence-generation-depth.v1",
+      "metric_path": "cells.coherence-generation-depth",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 10
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/coherence-inherited-counterexample",
+      "activity": "CoherenceInheritedCounterexample",
+      "name": "Coherence inherited counterexample",
+      "proof_choice": "COHERENCE",
+      "indicator_class": "GUARDRAIL",
+      "metric_id": "gooo.metric.evaluator-lineage.coherence-inherited-counterexample.v1",
+      "metric_path": "cells.coherence-inherited-counterexample",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 11
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/coherence-parent-decision",
+      "activity": "CoherenceParentDecision",
+      "name": "Coherence parent decision",
+      "proof_choice": "COHERENCE",
+      "indicator_class": "OUTCOME",
+      "metric_id": "gooo.metric.evaluator-lineage.coherence-parent-decision.v1",
+      "metric_path": "cells.coherence-parent-decision",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 12
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/regression-counterexample-replay",
+      "activity": "RegressionCounterexampleReplay",
+      "name": "Regression counterexample replay",
+      "proof_choice": "REGRESSION",
+      "indicator_class": "DRIVER",
+      "metric_id": "gooo.metric.evaluator-lineage.regression-counterexample-replay.v1",
+      "metric_path": "cells.regression-counterexample-replay",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 14
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/regression-child-candidate",
+      "activity": "RegressionChildCandidate",
+      "name": "Regression child candidate",
+      "proof_choice": "REGRESSION",
+      "indicator_class": "OUTCOME",
+      "metric_id": "gooo.metric.evaluator-lineage.regression-child-candidate.v1",
+      "metric_path": "cells.regression-child-candidate",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 15
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/regression-no-self-attestation",
+      "activity": "RegressionNoSelfAttestation",
+      "name": "Regression no self attestation",
+      "proof_choice": "REGRESSION",
+      "indicator_class": "GUARDRAIL",
+      "metric_id": "gooo.metric.evaluator-lineage.regression-no-self-attestation.v1",
+      "metric_path": "cells.regression-no-self-attestation",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 16
+    },
+    {
+      "id": "gooo://evaluator-lineage/activity/regression-improvement-pair",
+      "activity": "RegressionImprovementPair",
+      "name": "Regression improvement pair",
+      "proof_choice": "REGRESSION",
+      "indicator_class": "GUARDRAIL",
+      "metric_id": "gooo.metric.evaluator-lineage.regression-improvement-pair.v1",
+      "metric_path": "cells.regression-improvement-pair",
+      "artifact": "report.cells",
+      "evaluator": "lineage.Evaluate",
+      "source_line": 17
+    }
+  ]
+}
