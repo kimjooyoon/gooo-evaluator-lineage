@@ -4,9 +4,9 @@ set -euo pipefail
 go test ./...
 
 go_files=$(git ls-files '*.go')
-gofmt_output=$(gofmt -d ${go_files})
+gofmt_output=$(gofmt -l ${go_files})
 if [[ -n "${gofmt_output}" ]]; then
-  printf '%s\n' "${gofmt_output}"
+  printf 'unformatted Go file: %s\n' ${gofmt_output}
   exit 1
 fi
 
