@@ -64,3 +64,17 @@ func TestReleaseReferencesRejectMutableVersionShape(t *testing.T) {
 		t.Fatal("immutable release version rejected")
 	}
 }
+
+func TestImprovementRequiresExactBeforeAndAfterValues(t *testing.T) {
+	missing := improvementFor(Input{}, Denominator{})
+	if missing.State != StateUnknown {
+		t.Fatalf("missing pair state = %s", missing.State)
+	}
+	partial := improvementFor(Input{Improvement: &ImprovementInput{
+		Before: &ExactValue{Value: "before"},
+		After:  &ExactValue{},
+	}}, Denominator{})
+	if partial.State != StateUnknown || partial.Reason != "EXACT_BEFORE_AFTER_VALUE_MISSING" {
+		t.Fatalf("partial pair = %#v", partial)
+	}
+}

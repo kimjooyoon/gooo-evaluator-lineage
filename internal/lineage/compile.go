@@ -131,7 +131,7 @@ func CompileSource(sourcePath string, source []byte, denominator Denominator) (S
 		}
 	}
 	return SemanticIR{
-		Schema:       IRScheme,
+		Schema:       IRSchema,
 		SourcePath:   sourcePath,
 		SourceDigest: DigestBytes(source),
 		Nodes:        nodes,

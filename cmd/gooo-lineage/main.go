@@ -248,13 +248,13 @@ func writeFile(path string, data []byte) error {
 
 func expectedDecision(caseName string) (string, bool) {
 	decisions := map[string]string{
-		"normal":                    lineage.StateClosed,
-		"parent-missing":            lineage.StateUnknown,
-		"stale-parent":              lineage.StateUnknown,
-		"child-self-attestation":    lineage.StateRefuted,
-		"denominator-shrink":        lineage.StateRefuted,
-		"unknown-upper-decision":    lineage.StateUnknown,
-		"explicit-contradiction":    lineage.StateRefuted,
+		"normal":                 lineage.StateClosed,
+		"parent-missing":         lineage.StateUnknown,
+		"stale-parent":           lineage.StateUnknown,
+		"child-self-attestation": lineage.StateRefuted,
+		"denominator-shrink":     lineage.StateRefuted,
+		"unknown-upper-decision": lineage.StateUnknown,
+		"explicit-contradiction": lineage.StateRefuted,
 	}
 	decision, ok := decisions[caseName]
 	return decision, ok

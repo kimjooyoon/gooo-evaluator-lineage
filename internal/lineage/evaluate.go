@@ -236,7 +236,7 @@ func baseReport(meta Meta, inputDigest string) Report {
 		Decision:    StateRefuted,
 		InputDigest: inputDigest,
 		Precedence:  append([]string(nil), Precedence...),
-		Summary: Summary{DenominatorTotal: 12, Cells: Counts{Total: 0}},
+		Summary:     Summary{DenominatorTotal: 12, Cells: Counts{Total: 0}},
 		Cells:       []CellReport{},
 		Unknowns:    []Unknown{},
 		AuthorityChain: AuthorityChain{
@@ -275,13 +275,13 @@ func summaryFor(input Input) Summary {
 
 func authorityFor(input AuthorityInput) AuthorityReport {
 	return AuthorityReport{
-		RepositoryWrites:                    0,
-		LocalTestExecutions:                 0,
-		CrossProjectRequiredGates:            0,
-		RequestedRepositoryWrites:            input.RepositoryWrites,
-		RequestedLocalTestExecutions:         input.LocalTestExecutions,
-		RequestedCrossProjectRequiredGates:   input.CrossProjectRequiredGates,
-		ReadOnly: input.RepositoryWrites == 0 && input.LocalTestExecutions == 0 && input.CrossProjectRequiredGates == 0,
+		RepositoryWrites:                   0,
+		LocalTestExecutions:                0,
+		CrossProjectRequiredGates:          0,
+		RequestedRepositoryWrites:          input.RepositoryWrites,
+		RequestedLocalTestExecutions:       input.LocalTestExecutions,
+		RequestedCrossProjectRequiredGates: input.CrossProjectRequiredGates,
+		ReadOnly:                           input.RepositoryWrites == 0 && input.LocalTestExecutions == 0 && input.CrossProjectRequiredGates == 0,
 	}
 }
 
@@ -333,7 +333,10 @@ func improvementFor(input Input, denominator Denominator) ImprovementReport {
 	result.MetricID = input.Improvement.MetricID
 	result.Before = input.Improvement.Before
 	result.After = input.Improvement.After
-	if input.Improvement.Before == nil || input.Improvement.After == nil {
+	if input.Improvement.Before == nil || input.Improvement.After == nil || input.Improvement.Before.Value == "" || input.Improvement.After.Value == "" {
+		if input.Improvement.Before != nil && input.Improvement.After != nil {
+			result.Reason = "EXACT_BEFORE_AFTER_VALUE_MISSING"
+		}
 		return result
 	}
 	if !validDigest(input.Improvement.InputDigest) || !validDigest(input.Improvement.Before.Digest) || !validDigest(input.Improvement.After.Digest) || !metricInDenominator(input.Improvement.MetricID, denominator) {

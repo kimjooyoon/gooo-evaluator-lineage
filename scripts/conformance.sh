@@ -3,8 +3,8 @@ set -euo pipefail
 
 go test ./...
 
-go_files=$(rg --files -g '*.go')
-gofmt_output=$(gofmt -d ${go_files})
+go_files=$(git ls-files '*.go')
+gofmt_output=$(gofmt -d ${go_files} || true)
 if [[ -n "${gofmt_output}" ]]; then
   printf '%s\n' "${gofmt_output}"
   exit 1
