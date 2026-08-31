@@ -333,7 +333,10 @@ func improvementFor(input Input, denominator Denominator) ImprovementReport {
 	result.MetricID = input.Improvement.MetricID
 	result.Before = input.Improvement.Before
 	result.After = input.Improvement.After
-	if input.Improvement.Before == nil || input.Improvement.After == nil {
+	if input.Improvement.Before == nil || input.Improvement.After == nil || input.Improvement.Before.Value == "" || input.Improvement.After.Value == "" {
+		if input.Improvement.Before != nil && input.Improvement.After != nil {
+			result.Reason = "EXACT_BEFORE_AFTER_VALUE_MISSING"
+		}
 		return result
 	}
 	if !validDigest(input.Improvement.InputDigest) || !validDigest(input.Improvement.Before.Digest) || !validDigest(input.Improvement.After.Digest) || !metricInDenominator(input.Improvement.MetricID, denominator) {
