@@ -1,0 +1,51 @@
+{
+  "schema": "gooo/evaluator-lineage/release-history-provenance/v1",
+  "repository": "kimjooyoon/gooo-evaluator-lineage",
+  "audit": {
+    "source": "gooo-self-improvement-ledger API audit",
+    "api": "GitHub REST",
+    "endpoint": "https://api.github.com/repos/kimjooyoon/gooo-evaluator-lineage/releases/tags/v0.1.0",
+    "api_version": "2022-11-28",
+    "observed_at": "2026-08-31T02:51:18Z",
+    "status": "REFUTED_RELEASE_IMMUTABILITY"
+  },
+  "releases": [
+    {
+      "tag": "v0.1.0",
+      "target": {
+        "target_commitish": "main",
+        "commit_sha": "3b0605b11c81065123ff834a3c5213887681b788"
+      },
+      "assets": [
+        {
+          "name": "gooo-evaluator-lineage-0.1.0.tar.gz",
+          "size": 18694,
+          "api_sha256_digest": "sha256:4f2967a4d4698d9756c64ab265725e0596002b0e58b69663cfec87943da90d59",
+          "api_url": "https://api.github.com/repos/kimjooyoon/gooo-evaluator-lineage/releases/assets/537327070"
+        },
+        {
+          "name": "gooo-evaluator-lineage-0.1.0.tar.gz.sha256",
+          "size": 166,
+          "api_sha256_digest": "sha256:29fdb8e982003625cd31fb595f9ca7a5e0e880dfc01ee0b579029ea0e3eaafea",
+          "api_url": "https://api.github.com/repos/kimjooyoon/gooo-evaluator-lineage/releases/assets/537327072"
+        }
+      ],
+      "immutable": false,
+      "decision": "REFUTED_RELEASE_IMMUTABILITY"
+    }
+  ],
+  "next_release_policy": {
+    "preserve_v0_1_0": true,
+    "delete_or_recreate_v0_1_0": false,
+    "repository_immutable_releases_endpoint": "PUT /repos/kimjooyoon/gooo-evaluator-lineage/immutable-releases",
+    "repository_immutable_releases_api_version": "2026-03-10",
+    "repository_immutable_releases_enabled_required": true,
+    "next_release_tag": "v0.1.1",
+    "requires_annotated_tag": true,
+    "requires_main_ci_success": true,
+    "requires_rest_release_immutable": true,
+    "requires_graphql_release_immutable": true,
+    "requires_api_asset_sha256_digest": true,
+    "v0_1_0_evidence_counts_as_success": false
+  }
+}

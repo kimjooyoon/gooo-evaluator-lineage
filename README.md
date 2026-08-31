@@ -71,6 +71,17 @@ The inventory contract explicitly excludes a missing project-root README from
 inventory violations (`PROJECT_ROOT_README`); other source and binding gaps
 remain actionable.
 
+## Release integrity
+
+The first release, `v0.1.0`, is preserved but its GitHub API state is
+`immutable=false`; it is therefore `REFUTED_RELEASE_IMMUTABILITY` and must not
+be treated as a successful immutable release. The audit and next-release
+policy are recorded in
+`provenance/release-history-provenance-v1.json`. The repository immutable
+releases setting is enabled through the official API, and only a later release
+that is `immutable=true` in both REST and GraphQL can satisfy the release
+gate.
+
 ## Verification
 
 All development verification runs in GitHub Actions with Go 1.27:
