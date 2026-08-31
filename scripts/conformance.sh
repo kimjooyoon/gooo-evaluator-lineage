@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+jq -e '
+  .schema == "gooo/evaluator-lineage/release-history-provenance/v1" and
+  .audit.source == "gooo-self-improvement-ledger API audit" and
+  .releases[0].tag == "v0.1.0" and
+  .releases[0].immutable == false and
+  .releases[0].decision == "REFUTED_RELEASE_IMMUTABILITY" and
+  .next_release_policy.next_release_tag == "v0.1.1" and
+  .next_release_policy.v0_1_0_evidence_counts_as_success == false
+' provenance/release-history-provenance-v1.json >/dev/null
+
 go test ./...
 
 go_files=$(git ls-files '*.go')
