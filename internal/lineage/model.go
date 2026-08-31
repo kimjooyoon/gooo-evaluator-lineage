@@ -15,32 +15,32 @@ const (
 var Precedence = []string{StateRefuted, StateUnknown, StateClosed}
 
 type Input struct {
-	Schema         string            `json:"schema"`
-	CaseID         string            `json:"case_id"`
-	Parent         *ReleaseReference `json:"parent"`
-	Child          ReleaseReference  `json:"child"`
-	Cells          []CellEvidence    `json:"cells"`
-	UpperDecision  string            `json:"upper_decision"`
-	Improvement    *ImprovementInput `json:"improvement"`
-	Authority      AuthorityInput    `json:"authority"`
+	Schema        string            `json:"schema"`
+	CaseID        string            `json:"case_id"`
+	Parent        *ReleaseReference `json:"parent"`
+	Child         ReleaseReference  `json:"child"`
+	Cells         []CellEvidence    `json:"cells"`
+	UpperDecision string            `json:"upper_decision"`
+	Improvement   *ImprovementInput `json:"improvement"`
+	Authority     AuthorityInput    `json:"authority"`
 }
 
 type ReleaseReference struct {
-	ID                        string `json:"id"`
-	Version                   string `json:"version"`
-	ReleaseTag                string `json:"release_tag"`
-	ReleaseDigest             string `json:"release_digest"`
-	ObservedReleaseDigest     string `json:"observed_release_digest"`
-	GenerationDepth           int    `json:"generation_depth"`
-	InheritedCounterexampleCount int  `json:"inherited_counterexample_count"`
-	Decision                  string `json:"decision"`
-	SelfAttestation           *SelfAttestation `json:"self_attestation"`
+	ID                           string           `json:"id"`
+	Version                      string           `json:"version"`
+	ReleaseTag                   string           `json:"release_tag"`
+	ReleaseDigest                string           `json:"release_digest"`
+	ObservedReleaseDigest        string           `json:"observed_release_digest"`
+	GenerationDepth              int              `json:"generation_depth"`
+	InheritedCounterexampleCount int              `json:"inherited_counterexample_count"`
+	Decision                     string           `json:"decision"`
+	SelfAttestation              *SelfAttestation `json:"self_attestation"`
 }
 
 type SelfAttestation struct {
-	EvaluatorID    string `json:"evaluator_id"`
-	ReleaseDigest  string `json:"release_digest"`
-	Decision       string `json:"decision"`
+	EvaluatorID   string `json:"evaluator_id"`
+	ReleaseDigest string `json:"release_digest"`
+	Decision      string `json:"decision"`
 }
 
 type CellEvidence struct {
@@ -62,8 +62,8 @@ type ExactValue struct {
 }
 
 type AuthorityInput struct {
-	RepositoryWrites        int `json:"repository_writes"`
-	LocalTestExecutions     int `json:"local_test_executions"`
+	RepositoryWrites          int `json:"repository_writes"`
+	LocalTestExecutions       int `json:"local_test_executions"`
 	CrossProjectRequiredGates int `json:"cross_project_required_gates"`
 }
 
@@ -88,13 +88,13 @@ type ActivityIR struct {
 }
 
 type Denominator struct {
-	Schema           string             `json:"schema"`
-	DenominatorID    string             `json:"denominator_id"`
-	CandidateID      string             `json:"candidate_id"`
-	Total            int                `json:"total"`
-	Proofs           []Balance           `json:"proofs"`
-	IndicatorClasses []Balance           `json:"indicator_classes"`
-	Cells            []DenominatorCell  `json:"cells"`
+	Schema           string            `json:"schema"`
+	DenominatorID    string            `json:"denominator_id"`
+	CandidateID      string            `json:"candidate_id"`
+	Total            int               `json:"total"`
+	Proofs           []Balance         `json:"proofs"`
+	IndicatorClasses []Balance         `json:"indicator_classes"`
+	Cells            []DenominatorCell `json:"cells"`
 }
 
 type Balance struct {
@@ -147,45 +147,45 @@ type Generation struct {
 }
 
 type Summary struct {
-	DenominatorTotal                 int        `json:"denominator_total"`
-	ParentDigest                    string     `json:"parent_digest"`
-	ChildDigest                     string     `json:"child_digest"`
-	Generation                      Generation `json:"generation_depth"`
-	InheritedCounterexampleCount    int        `json:"inherited_counterexample_count"`
-	Cells                           Counts     `json:"cells"`
+	DenominatorTotal             int        `json:"denominator_total"`
+	ParentDigest                 string     `json:"parent_digest"`
+	ChildDigest                  string     `json:"child_digest"`
+	Generation                   Generation `json:"generation_depth"`
+	InheritedCounterexampleCount int        `json:"inherited_counterexample_count"`
+	Cells                        Counts     `json:"cells"`
 }
 
 type Meta struct {
-	SourcePath       string
-	SourceDigest     string
-	SemanticIRPath   string
-	SemanticIRDigest string
-	GeneratedGoPath  string
+	SourcePath        string
+	SourceDigest      string
+	SemanticIRPath    string
+	SemanticIRDigest  string
+	GeneratedGoPath   string
 	GeneratedGoDigest string
-	EvaluatorPath    string
-	EvaluatorDigest  string
-	ContractPath     string
-	ContractDigest   string
-	HumanReportPath  string
-	Denominator      Denominator
+	EvaluatorPath     string
+	EvaluatorDigest   string
+	ContractPath      string
+	ContractDigest    string
+	HumanReportPath   string
+	Denominator       Denominator
 }
 
 type ImprovementReport struct {
-	State       string      `json:"state"`
-	MetricID    string      `json:"metric_id"`
-	Reason      string      `json:"reason"`
-	Before      *ExactValue `json:"before"`
-	After       *ExactValue `json:"after"`
+	State    string      `json:"state"`
+	MetricID string      `json:"metric_id"`
+	Reason   string      `json:"reason"`
+	Before   *ExactValue `json:"before"`
+	After    *ExactValue `json:"after"`
 }
 
 type AuthorityReport struct {
-	RepositoryWrites          int `json:"repository_writes"`
-	LocalTestExecutions       int `json:"local_test_executions"`
-	CrossProjectRequiredGates int `json:"cross_project_required_gates"`
-	RequestedRepositoryWrites int `json:"requested_repository_writes"`
-	RequestedLocalTestExecutions int `json:"requested_local_test_executions"`
-	RequestedCrossProjectRequiredGates int `json:"requested_cross_project_required_gates"`
-	ReadOnly                  bool `json:"read_only"`
+	RepositoryWrites                   int  `json:"repository_writes"`
+	LocalTestExecutions                int  `json:"local_test_executions"`
+	CrossProjectRequiredGates          int  `json:"cross_project_required_gates"`
+	RequestedRepositoryWrites          int  `json:"requested_repository_writes"`
+	RequestedLocalTestExecutions       int  `json:"requested_local_test_executions"`
+	RequestedCrossProjectRequiredGates int  `json:"requested_cross_project_required_gates"`
+	ReadOnly                           bool `json:"read_only"`
 }
 
 type AuthorityArtifact struct {
@@ -207,19 +207,19 @@ type Inventory struct {
 }
 
 type Report struct {
-	Schema             string            `json:"schema"`
-	Decision           string            `json:"decision"`
-	CaseID             string            `json:"case_id"`
-	InputDigest        string            `json:"input_digest"`
-	Precedence         []string          `json:"precedence"`
-	Summary            Summary           `json:"summary"`
-	Cells              []CellReport      `json:"cells"`
-	Unknowns           []Unknown         `json:"unknowns"`
-	Improvement        ImprovementReport `json:"improvement"`
-	Authority          AuthorityReport   `json:"authority"`
-	AuthorityChain     AuthorityChain    `json:"authority_chain"`
-	Inventory          Inventory         `json:"inventory"`
-	Reason             string            `json:"reason"`
+	Schema         string            `json:"schema"`
+	Decision       string            `json:"decision"`
+	CaseID         string            `json:"case_id"`
+	InputDigest    string            `json:"input_digest"`
+	Precedence     []string          `json:"precedence"`
+	Summary        Summary           `json:"summary"`
+	Cells          []CellReport      `json:"cells"`
+	Unknowns       []Unknown         `json:"unknowns"`
+	Improvement    ImprovementReport `json:"improvement"`
+	Authority      AuthorityReport   `json:"authority"`
+	AuthorityChain AuthorityChain    `json:"authority_chain"`
+	Inventory      Inventory         `json:"inventory"`
+	Reason         string            `json:"reason"`
 }
 
 func (r Report) JSON() ([]byte, error) {
